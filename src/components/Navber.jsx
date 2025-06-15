@@ -1,3 +1,4 @@
+import Link from "next/link"
 import LoginButton from "./LoginButton"
 
 const Navber = () => {
@@ -7,7 +8,7 @@ const Navber = () => {
                         <h3 className="text-2xl font-semibold">Logo</h3>
                         <div className="space-x-3">
                               <LoginButton />
-                              <button type="button" className="py-2 px-4 bg-blue-800 rounded-lg cursor-pointer">Register</button>
+                              <Link href={'/register'} className="py-2 px-4 bg-blue-800 rounded-lg cursor-pointer">Register</Link>
                         </div>
                   </div>
             </nav>
