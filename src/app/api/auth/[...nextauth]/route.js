@@ -1,3 +1,4 @@
+import { dbConnect } from "@/lib/dbConnect";
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 
@@ -14,14 +15,13 @@ export const authOptions = {
                   },
                   async authorize(credentials, req) {
                         console.log("Credentials received:", credentials)
-                        const user = {
-                              id: "1",
-                              name: "J Smith",
-                              email: "jsmith@example.com"
-                        };
+                        const { username, email, password } = credentials;
+                        // Get user from db
+                        const user = await dbConnect("users").findOne({ username });
+                        const isPasswordOk = password == user.password;
 
-                        // return user || null;
-                        if (user) return user;
+                        // return user || null; // same work if else
+                        if (isPasswordOk) return user;
                         return null;
                   }
             })
