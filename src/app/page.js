@@ -1,7 +1,7 @@
 import UserInfo from "@/components/UserInfo";
+import { authOptions } from "@/lib/authOptions";
 import { getServerSession } from "next-auth";
 import Image from "next/image";
-import { authOptions } from "./api/auth/[...nextauth]/route";
 
 export default async function Home() {
   const session = await getServerSession(authOptions);
