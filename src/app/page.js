@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default async function Home() {
   const session = await getServerSession(authOptions);
-  console.log("Session from main page", session)
+  // console.log("Session from main page", session)
 
   return (
     <>
@@ -22,10 +22,13 @@ export default async function Home() {
         </div>
         {/* user Info */}
         <div>
-          <p>From client component</p>
+          <p className="text-3xl font-semibold mb-2">From client component</p>
           <UserInfo />
         </div>
-        {JSON.stringify(session)}
+        <div>
+          <p className="text-3xl font-semibold mb-2">From server component</p>
+          {JSON.stringify(session)}
+        </div>
       </div>
     </>
   );

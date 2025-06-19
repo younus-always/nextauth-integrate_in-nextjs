@@ -8,7 +8,9 @@ export const middleware = async (req) => {
       const isAdminSpecificRoute = req.nextUrl.pathname.startsWith('/dashboard')
       // Redirect Login page
       if (isAdminSpecificRoute && !isAdminUser) {
-            return NextResponse.redirect(new URL("/api/auth/signin", req.url))
+            // Redirect protected route path
+            const callbackUrl = encodeURIComponent(req.nextUrl.pathname)
+            return NextResponse.redirect(new URL(`/api/auth/signin?callbackUrl=${callbackUrl}`, req.url))
       }
       return NextResponse.next()
 }

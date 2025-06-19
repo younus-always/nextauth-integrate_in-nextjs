@@ -13,7 +13,7 @@ export const authOptions = {
                         password: { label: "Password", type: "password", placeholder: "password" }
                   },
                   async authorize(credentials, req) {
-                        console.log("Credentials received:", credentials)
+                        // console.log("Credentials received:", credentials)
                         const { username, email, password } = credentials;
                         // Get user from db
                         const user = await dbConnect(collectionNames.USERS).findOne({ username });

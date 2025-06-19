@@ -5,7 +5,7 @@ export const RegisterUser = async (user) => {
       try {
             // Need to check if unique username was given
 
-            console.log(user)
+            // console.log(user)
             const result = await dbConnect(collectionNames.USERS).insertOne(user)
             return result
       } catch (error) {
