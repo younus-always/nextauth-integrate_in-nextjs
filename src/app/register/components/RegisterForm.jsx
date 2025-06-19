@@ -2,6 +2,7 @@
 import { IoIosEye, IoIosEyeOff } from "react-icons/io";
 import { RegisterUser } from "@/app/actions/auth/RegisterUser";
 import { useState } from "react";
+import { NextResponse } from "next/server";
 
 const RegisterForm = () => {
       const [showPassword, setShowPassword] = useState(false);
@@ -15,8 +16,11 @@ const RegisterForm = () => {
             const user = { username, email, password };
             //
             const result = await RegisterUser(user);
-            console.log(result)
+            // console.log(result)
             form.reset()
+            // Redirect to login page
+            if (result.insertedId)
+                  return NextResponse.redirect(new URL("/api/auth/signin", req.url))
       };
       // showPassword state change function
       const handleShowPassword = () => {
