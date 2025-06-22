@@ -43,7 +43,23 @@ export const authOptions = {
       callbacks: {
             async signIn({ user, account, profile, email, credentials }) {
                   if (account) {
-                        console.log("From SignIn Callback: ", { user, account, profile, email, credentials })
+                        try {
+                              // console.log("From SignIn Callback: ", { user, account, profile, email, credentials })
+                              const { name, email: user_email, image } = user
+                              const { provider, providerAccountId } = account
+                              const userData = { role: "user", provider, providerAccountId, name, user_email, image }
+                              //
+                              const userCollecation = dbConnect(collectionNames.USERS)
+                              const isUserExist = await userCollecation.findOne({
+                                    providerAccountId
+                              })
+                              if (!isUserExist) {
+                                    await userCollecation.insertOne(userData)
+                              }
+                        } catch (error) {
+                              console.log(error)
+                              return false
+                        }
                   }
                   return true
             },
