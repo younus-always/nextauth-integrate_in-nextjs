@@ -6,17 +6,17 @@ A modern authentication-ready boilerplate built with **Next.js**, **NextAuth.js*
 
 ## 🧭 Table of Contents
 
-- [Introduction](#introduction)
-- [Features](#features)
+- [Introduction](#-introduction)
+- [Features](#-features)
 - [Installation](#-installation)
-- [Environment Variables](#environment-variables)
-- [Usage](#usage)
-- [Dependencies](#dependencies)
-- [Configuration](#configuration)
-- [Examples](#examples)
-- [Troubleshooting](#troubleshooting)
-- [Contributors](#contributors)
-- [License](#license)
+- [Environment Variables](#-environment-variables)
+- [Usage](#-usage)
+- [Dependencies](#-dependencies)
+- [Configuration](#-configuration)
+- [Examples](#-examples)
+- [Troubleshooting](#-troubleshooting)
+- [Contributors](#-contributors)
+- [License](#-license)
 
 ---
 
