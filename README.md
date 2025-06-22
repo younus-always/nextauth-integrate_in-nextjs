@@ -12,7 +12,7 @@ A modern authentication-ready boilerplate built with **Next.js**, **NextAuth.js*
 - [Environment Variables](#-environment-variables)
 - [Usage](#-usage)
 - [Dependencies](#-dependencies)
-- [Configuration](#-configuration)
+- [Configuration](#%EF%B8%8F-configuration)
 - [Examples](#-examples)
 - [Troubleshooting](#-troubleshooting)
 - [Contributors](#-contributors)
@@ -52,8 +52,7 @@ cd nextjs_nextauth_integrate
 npm install
 ```
 
-3. Configure environment variables
-
+## Environment Variables
 Create a .env.local file and populate it with the following variables:
 
 ```
