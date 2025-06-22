@@ -8,7 +8,7 @@ A modern authentication-ready boilerplate built with **Next.js**, **NextAuth.js*
 
 - [Introduction](#introduction)
 - [Features](#features)
-- [Installation](#installation)
+- [Installation](#-installation)
 - [Environment Variables](#environment-variables)
 - [Usage](#usage)
 - [Dependencies](#dependencies)
