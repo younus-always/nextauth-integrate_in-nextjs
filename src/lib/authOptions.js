@@ -1,6 +1,8 @@
 import { collectionNames, dbConnect } from "@/lib/dbConnect";
 import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
+import GitHubProvider from "next-auth/providers/github";
+import FacebookProvider from "next-auth/providers/facebook";
 
 export const authOptions = {
       providers: [
@@ -28,9 +30,23 @@ export const authOptions = {
             GoogleProvider({
                   clientId: process.env.GOOGLE_CLIENT_ID,
                   clientSecret: process.env.GOOGLE_CLIENT_SECRET
+            }),
+            GitHubProvider({
+                  clientId: process.env.GITHUB_ID,
+                  clientSecret: process.env.GITHUB_SECRET
+            }),
+            FacebookProvider({
+                  clientId: process.env.FACEBOOK_CLIENT_ID,
+                  clientSecret: process.env.FACEBOOK_CLIENT_SECRET
             })
       ],
       callbacks: {
+            async signIn({ user, account, profile, email, credentials }) {
+                  if (account) {
+                        console.log("From SignIn Callback: ", { user, account, profile, email, credentials })
+                  }
+                  return true
+            },
             async session({ session, token, user }) {
                   if (token) {
                         session.user.username = token.username;
