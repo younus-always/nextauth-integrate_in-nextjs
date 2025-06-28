@@ -42,8 +42,8 @@ This project demonstrates how to integrate [Next.js](https://nextjs.org/) with [
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/your-username/nextjs_nextauth_integrate.git
-cd nextjs_nextauth_integrate
+git clone https://github.com/younus-always/nextauth-integrate_in-nextjs.git
+cd nextauth-integrate_in-nextjs
 ```
 
 2. Install dependencies
@@ -136,7 +136,7 @@ You can integrate custom sign-in pages, restrict routes, or extend user profiles
 
 ## 👥 Contributors
 
-- Your Name – your-website.com
+- Md. Younus Islam – [GitHub](https://github.com/younus-always)
 
 Feel free to add more contributors as needed.
 
